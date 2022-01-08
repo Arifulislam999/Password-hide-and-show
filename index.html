@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hide And Show Password</title>
+
+    <style>
+        label {
+            font-weight: bold;
+            font-size: 22px;
+        }
+        
+        #pass {
+            padding: 5px 12px;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #8ceae0;
+            border: none;
+        }
+        
+        #pass1 {
+            padding: 5px 12px;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #8ceae0;
+            border: none;
+        }
+        
+        .fa-eye {
+            position: absolute;
+            left: 410px;
+            top: 16px;
+            cursor: pointer;
+        }
+        
+        .inline {
+            position: relative;
+            display: flex;
+        }
+        
+        #checkbox {
+            position: absolute;
+            margin-top: 15px;
+            left: 158px;
+        }
+        
+        h3 {
+            position: absolute;
+            left: 180px;
+            top: -7px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <label for="pass">Enter Password:</label>
+    <input type="password" id="pass" placeholder="Password" required />
+    <i class="fas fa-eye" title="Show Password"></i><br /><br />
+    <label for="pass">Enter Password:</label>
+    <input type="password" id="pass1" placeholder="Password" required />
+    <br />
+    <div class="inline">
+        <input type="checkbox" id="checkbox" />
+        <h3>Show Password</h3>
+    </div>
+</body>
+<script>
+    let eye = document.querySelector(".fa-eye");
+    let password = document.querySelector("#pass");
+    eye.addEventListener("click", () => {
+        if (password.type == "password") {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+    });
+    let password1 = document.querySelector("#pass1");
+    let box = document.querySelector("#checkbox");
+    box.addEventListener("click", () => {
+        if (password1.type == "password") {
+            password1.type = "text";
+        } else {
+            password1.type = "password";
+        }
+    });
+</script>
+
+</html>
